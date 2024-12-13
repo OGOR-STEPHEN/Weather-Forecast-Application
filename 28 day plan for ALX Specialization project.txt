@@ -1,0 +1,50 @@
+28-Day Plan
+Phase 1: Core Development (Day 1–14)
+
+    Day 1–2: Setup
+        Finalize app requirements.
+        Set up the environment and fetch your first API data.
+
+    Day 3–6: Build the Current Weather Feature
+        Create a functional search bar.
+        Display the current weather for any searched city (temperature, condition, icon).
+
+    Day 7–10: Add Forecast Features
+        Fetch and display a 5-day or hourly forecast.
+        Ensure dynamic updates based on the search.
+
+    Day 11–14: Improve UI and Basic Interactivity
+        Style the app (CSS/Bootstrap/Tailwind).
+        Add error messages for invalid city names.
+        Ensure mobile responsiveness.
+
+Phase 2: Advanced Features and Optimization (Day 15–21)
+
+    Day 15–17: Add Geolocation and Temperature Conversion
+        Implement geolocation for automatic weather detection.
+        Enable users to toggle between Celsius and Fahrenheit.
+
+    Day 18–21: Optimize and Enhance
+        Optimize API calls (reduce unnecessary requests).
+        Add custom weather icons and animations for a polished look.
+        Test the app thoroughly on different devices and browsers.
+
+Phase 3: Finalization and Buffer (Day 22–25)
+
+    Day 22–23: Deployment and Documentation
+        Deploy the app on Netlify, Vercel, or GitHub Pages.
+        Write a comprehensive README file.
+
+    Day 24–25: Final Testing and Review
+        Conduct a final round of testing and fix any last-minute issues.
+        Polish the UI and ensure smooth functionality.
+
+Phase 4: Slide and Video Preparation (Day 26–28)
+
+    Day 26–27: Create the Slide Presentation
+        Include project overview, features, challenges, and API usage.
+        Use screenshots and diagrams to explain key points.
+
+    Day 28: Record Video Presentation
+
+    Walk through the app's functionality and explain your code/approach.
