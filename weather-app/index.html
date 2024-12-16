@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Weather Forecast</h1>
-  <input type="text" id="city" placeholder="Enter city name">
-  <button id="getWeather">Get Weather</button>
-  <div id="weatherResult"></div>
+  <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+          <h1>Weather Forecast</h1>
+          <input type="text" id="city" placeholder="Enter City">
+          <button id="get-weather">Get Weather</button>
+      </header>
+
+      <!-- Current Weather Card -->
+      <section class="weather-card">
+          <h2 id="city-name">Current Weather</h2>
+          <p id="temperature">--°C</p>
+          <p id="weather-description">Description: --</p>
+          <p id="humidity">Humidity: --%</p>
+      </section>
+
+      <!-- Multi-Day Forecast -->
+      <section class="forecast">
+          <h3>3-Day Forecast</h3>
+          <div class="forecast-cards">
+              <!-- Placeholder Forecast Cards -->
+              <div class="forecast-card">
+                  <p>Day 1</p>
+                  <i class="fa-solid fa-sun"></i>
+                  <p>25°C</p>
+              </div>
+              <div class="forecast-card">
+                  <p>Day 2</p>
+                  <i class="fa-solid fa-cloud"></i>
+                  <p>22°C</p>
+              </div>
+              <div class="forecast-card">
+                  <p>Day 3</p>
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                  <p>20°C</p>
+              </div>
+          </div>
+      </section>
+
+      <!-- Weather Conditions -->
+      <section class="conditions">
+          <h3>Weather Conditions</h3>
+          <div class="condition-icons">
+              <div>
+                  <i class="fa-solid fa-wind"></i>
+                  <p>Wind: -- m/s</p>
+              </div>
+              <div>
+                  <i class="fa-solid fa-tint"></i>
+                  <p>Humidity: --%</p>
+              </div>
+              <div>
+                  <i class="fa-solid fa-compass"></i>
+                  <p>Direction: --</p>
+              </div>
+          </div>
+      </section>
+  </div>
+
   <script src="index.js"></script>
 </body>
 </html>

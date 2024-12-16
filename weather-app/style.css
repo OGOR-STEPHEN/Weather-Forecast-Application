@@ -1,0 +1,120 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #1e2a38;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+      "header header"
+      "weather forecast"
+      "weather conditions";
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Header */
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b3e50;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.header input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.header button {
+  background: #ff9800;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background: #e68900;
+}
+
+/* Weather Card */
+.weather-card {
+  grid-area: weather;
+  background: #3b4f63;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Forecast */
+.forecast {
+  grid-area: forecast;
+  background: #3b4f63;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.forecast-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.forecast-card {
+  background: #2b3e50;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Weather Conditions */
+.conditions {
+  grid-area: conditions;
+  background: #3b4f63;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.condition-icons {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  input[type="text"] {
+      width: 100%; /* Full width for small screens */
+      margin: 0 0 10px 0; /* Add margin below input */
+  }
+
+  button {
+      width: 100%; /* Full width for button */
+  }
+
+  #weather-container {
+      width: 90%; /* Adjust width for mobile screens */
+      text-align: center; /* Center align text */
+  }
+}
