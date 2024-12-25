@@ -26,6 +26,38 @@ body {
   font-weight: bold;
 }
 
+/* Initially hide the menu for mobile */
+.header-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-menu li {
+  margin: 10px 0;
+}
+
+.header-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-menu.show {
+  display: flex;  /* Show the menu when toggled */
+}
+
 .search input {
   padding: 0.8rem;
   border-radius: 5px;
@@ -42,6 +74,21 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+}
+
+/* Hamburger Icon (visible on mobile) */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff; /* Make the icon white for visibility */
+  z-index: 1000; /* Make sure the icon stays above other content */
+}
+
+/* Header search section - initially hidden on mobile */
+.search {
+  display: flex;
+  align-items: center;
 }
 
 /* Current Weather */
@@ -297,21 +344,70 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* Responsive Design */
+
+/* When the screen width is 768px or smaller, show the hamburger icon */
 @media (max-width: 768px) {
-  .weather-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  .hamburger {
+    display: block; /* Show the hamburger icon on smaller screens */
+  }
+
+  /* Initially hide the search box and button on small screens */
+  .search {
+    /* display: none; */
+    flex-direction: column;
+    position: fixed; /* Fix it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for the menu */
+    justify-content: center; /* Center the search bar and buttons */
+    padding: 2rem;
+    z-index: 999; /* Ensure it's above other content */
+    transform: translateY(-100%); /* Hide the menu by default */
+    transition: transform 0.3s ease; /* Smooth transition for sliding in */
+  }
+
+  /* When the hamburger is clicked, show the search box */
+  .search.show {
+    transform: translateY(0); /* Slide the menu into view */
+  }
+
+  /* Style the search input and button for mobile */
+  .search input,
+  .search button {
+    width: 90%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .search button {
+    background-color: #4f76f6;
+    color: white;
+    cursor: pointer;
   }
 }
 
 @media (max-width: 480px) {
-  .weather-cards {
+  .forecast-cards {
     grid-template-columns: 1fr; /* 1 column for mobile */
   }
-}
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 600px) {
   .search input {
     width: 100%;
     margin-bottom: 1rem;
@@ -333,9 +429,5 @@ body {
   .metrics .metric-item {
     width: 100%;
     margin: 1rem 0;
-  }
-
-  .forecast-container, .location-forecast, .weather-metrics {
-    justify-content: center;
   }
 }

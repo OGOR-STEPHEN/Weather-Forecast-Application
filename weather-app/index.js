@@ -1,5 +1,14 @@
 const apiKey = '6bb8bb0aa22fb7f059d67300ddeb1615'; // Replace with your valid OpenWeatherMap API key
 
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const searchSection = document.querySelector('.search');
+
+// Toggle the search section visibility when the hamburger icon is clicked
+hamburger.addEventListener('click', () => {
+  searchSection.classList.toggle('show');
+});
+
 // Add event listener for search input to show suggestions
 document.getElementById('location-input').addEventListener('input', function () {
   const inputValue = this.value;
