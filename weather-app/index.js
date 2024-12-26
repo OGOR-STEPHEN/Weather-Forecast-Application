@@ -19,7 +19,7 @@ document.getElementById('location-input').addEventListener('input', function () 
   }
 });
 
-// Fetch city suggestions from the OpenWeatherMap API (or use a different API for better suggestions)
+// Fetch city suggestions from the OpenWeatherMap API
 function fetchCitySuggestions(query) {
   fetch(`https://api.openweathermap.org/data/2.5/find?q=${query}&type=like&sort=population&cnt=5&appid=${apiKey}`)
     .then(response => response.json())
@@ -58,8 +58,12 @@ function clearSuggestions() {
 
 // Search Weather by Location
 document.getElementById('Search-btn').addEventListener('click', () => {
-  const location = document.getElementById('location-input').value;
-  fetchWeather(location);
+  const location = document.getElementById('location-input').value.trim();
+  if (location) {
+    fetchWeather(location);
+  } else {
+    alert("Please enter a city name.");
+  }
 });
 
 function fetchWeather(location) {
@@ -138,10 +142,8 @@ function updateCurrentWeather(data) {
   document.getElementById('wind-speed').textContent = `${data.wind.speed} km/h`;
   document.getElementById('pressure').textContent = `${data.main.pressure} hPa`;
 
-  // Adding UV index and visibility
-  const uvIndex = data.current ? data.current.uvi : '--'; // Ensure this field exists or handle it based on available data
+  // Adding Visibility
   const visibility = data.visibility ? (data.visibility / 1000) : '--'; // Convert to km
-  document.getElementById('uv-index').textContent = `${uvIndex}`;
   document.getElementById('visibility').textContent = `${visibility} km`;
 }
 
@@ -155,24 +157,6 @@ function getWeatherIcon(condition) {
     Thunderstorm: "⚡",
   };
   return icons[condition] || "🌫️";
-}
-
-// Fetch 3-day forecast for the current location
-function fetchLocationForecast() {
-  const location = document.getElementById('location-input').value;
-  
-  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&cnt=3&appid=${apiKey}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`City not found (${response.status})`);
-      }
-      return response.json();
-    })
-    .then(data => updateForecast(data))
-    .catch(error => {
-      console.error("Error fetching forecast data:", error);
-      alert("Unable to fetch forecast data.");
-    });
 }
 
 // Update 3-day forecast

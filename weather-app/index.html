@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +12,10 @@
     <!-- Header Section -->
     <header class="header">
       <h1>Weather Forecast</h1>
-      <div class="hamburger" id="hamburger-icon">&#9776;</div> <!-- Hamburger Icon -->
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger-icon">
+        &#9776;
+      </div> 
       <div class="search">
         <input type="text" id="location-input" placeholder="Weather in your city" autocomplete="off">
         <button id="Search-btn">Get Weather</button>
@@ -27,7 +31,7 @@
         <h2 id="current-location">Current Location</h2>
         <div class="temp" id="current-temp">--°C</div>
         <div class="condition" id="current-condition">--</div>
-        <div class="weather-icon" id="current-icon">☀️</div>
+        <i class="wi wi-day-sunny weather-icon" id="current-icon"></i>
       </div>
     </section>
   
@@ -63,11 +67,7 @@
           <p>Pressure</p>
           <span id="pressure">-- hPa</span>
         </div>
-        <!-- New Metrics: UV Index and Visibility -->
-        <div class="metric-item">
-          <p>UV Index</p>
-          <span id="uv-index">--</span>
-        </div>
+        <!-- New Metric: Visibility -->
         <div class="metric-item">
           <p>Visibility</p>
           <span id="visibility">-- km</span>
