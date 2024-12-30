@@ -2,7 +2,12 @@
 document.getElementById('Save').addEventListener('click', () => {
     const unit = document.getElementById('unit-toggle').value;
     const theme = document.getElementById('theme-toggle').value;
-    const defaultLocation = document.getElementById('default-location').value;
+    const defaultLocation = document.getElementById('default-location').value.trim();
+
+    if (!defaultLocation) {
+        alert('Please enter a default location.');
+        return;
+    }
 
     // Save settings to localStorage
     localStorage.setItem('unit', unit);
@@ -10,6 +15,12 @@ document.getElementById('Save').addEventListener('click', () => {
     localStorage.setItem('defaultLocation', defaultLocation);
 
     alert('Settings saved successfully!');
+});
+
+// Apply theme dynamically
+document.getElementById('theme-toggle').addEventListener('change', () => {
+    const theme = document.getElementById('theme-toggle').value;
+    document.body.classList.toggle('dark-theme', theme === 'dark');
 });
 
 // Apply theme on page load
