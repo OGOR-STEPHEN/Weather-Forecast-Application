@@ -19,6 +19,12 @@ document.getElementById('location-input').addEventListener('input', function () 
   }
 });
 
+// Apply theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const theme = localStorage.getItem('theme') || 'light';
+  document.body.classList.toggle('dark-theme', theme === 'dark');
+});
+
 // Fetch city suggestions from the OpenWeatherMap API
 function fetchCitySuggestions(query) {
   fetch(`https://api.openweathermap.org/data/2.5/find?q=${query}&type=like&sort=population&cnt=5&appid=${apiKey}`)

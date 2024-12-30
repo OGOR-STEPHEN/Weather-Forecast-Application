@@ -6,9 +6,29 @@
   font-family: Arial, sans-serif;
 }
 
+/* Light Theme - default */
+:root {
+  --bg-color-light: #E9F1FA;
+  --text-color-light: #1e1e2e;
+  --primary-color-light: #00ABE4;
+  --button-bg-light: #00ABE4;
+  --button-hover-bg-light: #007BBF;
+  --card-bg-light: #FFFFFF;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --bg-color-light: #1e1e2e;
+  --text-color-light: #E9F1FA;
+  --primary-color-light: #00ABE4; /* Adjust this if needed */
+  --button-bg-light: #4CAF50; /* A green button for dark theme */
+  --button-hover-bg-light: #1e1e2e;
+  --card-bg-light: #333;
+}
+
 body {
-  background-color: #E9F1FA;
-  color: #1e1e2e;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
   line-height: 1.5;
 }
 
@@ -18,46 +38,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: #00ABE4;
-  color: #FFFFFF;
+  background: var(--primary-color-light);
+  color: var(--text-color-light);
 }
 
 .header h1 {
   font-size: 2rem;
   font-weight: bold;
-  color: #FFFFFF;
-}
-
-/* Initially hide the menu for mobile */
-.header-menu {
-  display: none;
-  flex-direction: column;
-  background-color: #333;
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.header-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.header-menu li {
-  margin: 10px 0;
-}
-
-.header-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.header-menu.show {
-  display: flex;  /* Show the menu when toggled */
+  color: var(--text-color-light);
 }
 
 /* Search Section */
@@ -77,8 +65,8 @@ body {
 .search button {
   padding: 0.8rem 1.5rem;
   margin-left: 1rem;
-  background-color: #00ABE4;
-  color: #FFFFFF;
+  background: var(--primary-color-light);
+  color: var(--text-color-light);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -86,11 +74,72 @@ body {
   transition: transform 0.3s ease;
 }
 
-.search button:hover {
-  transform: translateY(-5px);
-  background-color: #007BBF;
+button{
+  padding: 0.8rem 1.5rem;
+  margin-left: 1rem;
+  background-color: var(--button-hover-bg-light);
+  color: var(--text-color-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
 }
 
+button:hover {
+  transform: translateY(-5px);
+  background: var(--button-hover-bg-light);
+}
+
+.search button a{
+  text-decoration: none;
+  color: var(--text-color-light);
+  top: 10px;
+}
+
+.search button a:hover{
+  transform: translateY(-5px);
+}
+
+.search button:hover {
+  transform: translateY(-5px);
+  background: var(--button-hover-bg-light);
+}
+
+/* General Settings Section Styling */
+.settings-section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #E9F1FA; /* Light blue */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Settings Item */
+.settings-item {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* Input and Select Fields */
+.settings-item input,
+.settings-item select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #00ABE4; /* Bright blue */
+    border-radius: 5px;
+    outline: none;
+    width: 60%; /* Adjust width for better alignment */
+}
+
+
+
+
+/* Hamburger Icon */
 /* Hamburger Icon (visible on mobile) */
 .hamburger {
   display: none; /* Hidden by default */
@@ -117,7 +166,7 @@ body {
 
 .current-card {
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: var(--card-bg-light);
   border-radius: 12px;
   padding: 2rem;
   width: 300px;
@@ -133,7 +182,7 @@ body {
 .current-card .condition {
   font-size: 1.2rem;
   margin-top: 10px;
-  color: #1e1e2e;
+  color: var(--text-color-light);
 }
 
 .weather-icon {
@@ -157,7 +206,7 @@ body {
 }
 
 .forecast-cards .card {
-  background-color: #FFFFFF;
+  background-color: var(--card-bg-light);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 1rem;
@@ -174,7 +223,7 @@ body {
 
 .forecast-cards .card .condition {
   font-size: 1rem;
-  color: #1e1e2e;
+  color: var(--text-color-light);
 }
 
 /* Location Forecast */
@@ -192,7 +241,7 @@ body {
 }
 
 .location-cards .card {
-  background-color: #FFFFFF;
+  background-color: var(--card-bg-light);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 1rem;
@@ -204,7 +253,7 @@ body {
 .location-cards .card .city {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #1e1e2e;
+  color: var(--text-color-light);
 }
 
 .location-cards .card .temp {
@@ -215,7 +264,7 @@ body {
 
 .location-cards .card .condition {
   font-size: 1rem;
-  color: #1e1e2e;
+  color: var(--text-color-light);
 }
 
 /* Weather Metrics */
@@ -225,7 +274,7 @@ body {
 }
 
 .metrics .metric-item {
-  background-color: #FFFFFF;
+  background-color: var(--card-bg-light);
   border-radius: 12px;
   padding: 1rem;
   margin: 1rem;
@@ -286,6 +335,7 @@ body {
   background-color: #007BBF;
   transform: translateY(-5px);
 }
+
 /* When there are suggestions to display, make the dropdown visible */
 .search input:focus + #suggestions-list,
 .suggestions-box.show {
@@ -296,9 +346,8 @@ body {
   list-style-type: none;
   cursor: pointer;
 }
-/* Responsive Design */
 
-/* When the screen width is 768px or smaller, show the hamburger icon */
+/* Responsive Design */
 @media (max-width: 768px) {
   .hamburger {
     display: block; /* Show the hamburger icon on smaller screens */
@@ -347,6 +396,21 @@ body {
     transform: translateY(-5px);
     background-color: #007BBF;
   }
+
+  .settings-section {
+    padding: 15px;
+    margin: 30px 15px;
+}
+
+.settings-item input,
+.settings-item select {
+    width: 100%; /* Full width for smaller screens */
+}
+
+#save-settings-btn,
+#back-btn {
+    width: 100%; /* Full width for buttons on smaller screens */
+}
 }
 
 @media (max-width: 480px) {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Settings</h1>
+    </header>
+
+    <!-- Settings Content -->
+    <section class="settings-section">
+        <div class="settings-item">
+            <label for="unit-toggle">Temperature Unit:</label>
+            <select id="unit-toggle">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+        </div>
+        <div class="settings-item">
+            <label for="theme-toggle">Theme:</label>
+            <select id="theme-toggle">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+        <div class="settings-item">
+            <label for="default-location">Default Location:</label>
+            <input type="text" id="default-location" placeholder="Enter default city">
+        </div>
+        <button id="Save">Save Settings</button>
+        <button id="back-btn">Back</button>
+    </section>
+    <script src="index.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>
