@@ -23,6 +23,12 @@ document.getElementById('location-input').addEventListener('input', function () 
 document.addEventListener('DOMContentLoaded', () => {
   const theme = localStorage.getItem('theme') || 'light';
   document.body.classList.toggle('dark-theme', theme === 'dark');
+
+    // Load default location if available
+    const defaultLocation = localStorage.getItem('defaultLocation');
+    if (defaultLocation) {
+      fetchWeather(defaultLocation);
+    }
 });
 
 // Fetch city suggestions from the OpenWeatherMap API

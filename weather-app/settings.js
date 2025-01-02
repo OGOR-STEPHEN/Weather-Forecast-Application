@@ -21,6 +21,19 @@ document.getElementById('Save').addEventListener('click', () => {
 document.getElementById('theme-toggle').addEventListener('change', () => {
     const theme = document.getElementById('theme-toggle').value;
     document.body.classList.toggle('dark-theme', theme === 'dark');
+
+    // Check for saved unit and default location
+  const savedUnit = localStorage.getItem('unit') || 'metric'; // Default to Celsius
+  const savedLocation = localStorage.getItem('defaultLocation') || '';
+
+  // Set the temperature unit for the weather fetch
+  const unit = savedUnit === 'imperial' ? 'imperial' : 'metric'; // Fahrenheit or Celsius
+  document.getElementById('unit-toggle').value = savedUnit; // Set toggle to correct value
+
+  // If there's a saved location, fetch the weather for that location
+  if (savedLocation) {
+    fetchWeather(savedLocation, unit);
+  }
 });
 
 // Apply theme on page load
