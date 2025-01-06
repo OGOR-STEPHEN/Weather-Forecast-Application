@@ -29,7 +29,7 @@ A simple weather forecast web app that fetches weather data for any city using t
 3. Open index.html in your browser.
     API Key
     You will need to sign up for an API key from OpenWeatherMap.
-    Replace YOUR_API_KEY_HERE in script.js with your actual API key.
+    Replace YOUR_API_KEY_HERE in index.js with your actual API key.
 
 How to Use
 
@@ -48,13 +48,3 @@ Contributing
 License
 
 This project is open-source and available under the MIT License.
-
-### Instructions:
-
-1. **Project Name**: Replace the title with the name of your project if different.
-2. **Clone Command**: If you haven’t already, replace `yourusername` with your actual GitHub username in the `git clone` command.
-3. **API Key**: Mention where to add the API key in your `script.js` file.
-4. **Installation Steps**: If there are specific setup steps or dependencies, include them.
-5. **Contributing**: You can add contribution guidelines if you're planning to allow others to contribute to the project.
-
-Once you've updated the README to your liking, you can push it to your GitHub repository along with your other code files! Let me know if you'd like any further adjustments.

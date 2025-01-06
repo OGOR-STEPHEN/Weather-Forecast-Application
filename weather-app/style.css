@@ -353,6 +353,31 @@ button:hover {
   cursor: pointer;
 }
 
+/* Footer Styles */
+.footer {
+  background-color: #00ABE4; /* Bright blue */
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #E9F1FA; /* Light blue for hover effect */
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hamburger {
@@ -421,6 +446,10 @@ button:hover {
 
 @media (max-width: 480px) {
   .forecast-cards {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+
+  .location-cards{
     grid-template-columns: 1fr; /* 1 column for mobile */
   }
 
